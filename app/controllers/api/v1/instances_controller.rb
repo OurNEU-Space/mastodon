@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Api::V1::InstancesController < Api::BaseController
-  skip_before_action :require_authenticated_user!, unless: :whitelist_mode?
+<<<<<<< HEAD
+  skip_before_action :require_authenticated_user!
   skip_around_action :set_locale
 
   vary_by ''
