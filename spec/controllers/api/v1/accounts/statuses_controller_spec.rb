@@ -48,11 +48,11 @@ describe Api::V1::Accounts::StatusesController do
         expect(response).to have_http_status(200)
       end
 
-      it 'returns posts along with self replies' do
+      it 'returns posts without self replies' do
         json = body_as_json
         post_ids = json.map { |item| item[:id].to_i }.sort
 
-        expect(post_ids).to eq [status.id, status_self_reply.id]
+        expect(post_ids).to eq [status.id]
       end
     end
 

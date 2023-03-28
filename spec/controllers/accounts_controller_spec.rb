@@ -326,7 +326,7 @@ RSpec.describe AccountsController, type: :controller do
         end
 
         it 'renders self-reply' do
-          expect(response.body).to include(ActivityPub::TagManager.instance.url_for(status_self_reply))
+          expect(response.body).not_to include(ActivityPub::TagManager.instance.url_for(status_self_reply))
         end
 
         it 'renders status with media' do
