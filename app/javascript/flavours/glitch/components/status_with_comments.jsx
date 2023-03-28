@@ -55,7 +55,7 @@ class StatusWithComments extends ImmutablePureComponent {
             {childrenWithGrandchildren
               .filter((_, idx) => showAll || idx < N)
               .map(({ cid,  grandchildrenIds }) => (
-                <>
+                <React.Fragment key={cid}>
                   <StatusContainer
                     key={`comment-${cid}`}
                     id={cid}
@@ -73,7 +73,7 @@ class StatusWithComments extends ImmutablePureComponent {
                       {!showAll && grandchildrenIds.size > N && loadMore}
                     </div>
                   )}
-                </>
+                </React.Fragment>
               ))}
             {!showAll && childrenWithGrandchildren.size > N && loadMore}
           </div>
