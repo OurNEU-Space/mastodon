@@ -4,6 +4,7 @@ class TextFormatter
   include ActionView::Helpers::TextHelper
   include ERB::Util
   include RoutingHelper
+  include AccountsHelper
 
   URL_PREFIX_REGEX = /\A(https?:\/\/(www\.)?|xmpp:)/
 
@@ -119,7 +120,8 @@ class TextFormatter
     return "@#{h(entity[:screen_name])}" if account.nil?
 
     url = ActivityPub::TagManager.instance.url_for(account)
-    display_username = same_username_hits&.positive? || with_domains? ? account.pretty_acct : account.username
+    # account may come from cache and has no display_name attribute because of .select(...)
+    display_username = same_username_hits&.positive? || with_domains? || !account.has_attribute?('display_name') ? account.pretty_acct : display_name(account)
 
     <<~HTML.squish
       <span class="h-card"><a href="#{h(url)}" class="u-url mention">@<span>#{h(display_username)}</span></a></span>
