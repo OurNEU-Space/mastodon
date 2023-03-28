@@ -7,4 +7,5 @@ Rails.application.configure do
   config.x.anon.acc = ENV.fetch('ANON_ACC', nil)
   config.x.anon.namelist = ENV['ANON_NAME_LIST'] ? File.readlines(ENV['ANON_NAME_LIST']).collect(&:strip) : ['Alice', 'Bob', 'Carol', 'Dave']
   config.x.anon.salt = (1..42).map { ('a'..'z').to_a.sample }.join
+  config.x.news_bot_id = ENV.fetch('NEWS_BOT', nil)
 end

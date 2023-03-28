@@ -85,6 +85,7 @@
  * @property {string} status_page_url
  * @property {boolean} system_emoji_font
  * @property {string} default_content_type
+ * @property {string} news_bot_id
  */
 
 /**
@@ -158,5 +159,8 @@ export const favouriteModal = getMeta('favourite_modal');
 export const pollLimits = (initialState && initialState.poll_limits);
 export const defaultContentType = getMeta('default_content_type');
 export const useSystemEmojiFont = getMeta('system_emoji_font');
+
+// Closed-social-specific settings
+export const newsBotId = getMeta('news_bot_id');
 
 export default initialState;
