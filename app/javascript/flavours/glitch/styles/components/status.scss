@@ -1193,7 +1193,13 @@ a.status-card.compact:hover {
   }
 
   .status__avatar {
-    display: none;
+    height: 30px;
+    width: 30px;
+
+    .account__avatar {
+      transform: scale(0.625);
+      transform-origin: 0 0;
+    }
   }
 
   .display-name strong {
