@@ -76,8 +76,8 @@ RSpec.describe Trends::Statuses do
     let!(:status3) { Fabricate(:status, text: 'Baz', language: 'en', trendable: true, created_at: today) }
 
     before do
-      13.times { reblog(status1, today) }
-      13.times { reblog(status2, today) }
+      20.times { reblog(status1, today) }
+      20.times { reblog(status2, today) }
       4.times { reblog(status3, today) }
     end
 
