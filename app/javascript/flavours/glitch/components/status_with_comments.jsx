@@ -19,7 +19,6 @@ const mapStateToProps = (state, { id }) => {
 
 const N = 3;
 
-export default @connect(mapStateToProps)
 class StatusWithComments extends ImmutablePureComponent {
 
   state = {
@@ -83,3 +82,5 @@ class StatusWithComments extends ImmutablePureComponent {
   }
 
 }
+
+export default connect(mapStateToProps)(StatusWithComments);

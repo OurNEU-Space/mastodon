@@ -16,7 +16,6 @@ const mapStateToProps = (state, { accountId }) => {
 };
 
 
-export default @connect(mapStateToProps)
 class NewsBotStatuses extends React.PureComponent {
 
   static propTypes = {
@@ -53,3 +52,5 @@ class NewsBotStatuses extends React.PureComponent {
   }
 
 }
+
+export default connect(mapStateToProps)(NewsBotStatuses);
