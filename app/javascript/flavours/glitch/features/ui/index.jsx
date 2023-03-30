@@ -172,7 +172,7 @@ class SwitchingColumnsArea extends React.PureComponent {
 
     if (signedIn) {
       if (mobile) {
-        redirect = <Redirect from='/' to='/home' exact />;
+        redirect = <Redirect from='/' to='/public/local' exact />;
       } else {
         redirect = <Redirect from='/' to='/getting-started' exact />;
       }
