@@ -59,7 +59,7 @@ class Api::V1::StatusesController < Api::BaseController
     ori_text = status_params[:status]
     anon = Rails.configuration.x.anon
     anon_name = anon.acc &&
-                ori_text.strip.end_with?(anon.tag, " #{anon.tag} ") &&
+                ori_text.strip.end_with?(anon.tag, " #{anon.tag} :eye:") &&
                 generate_anon_name(
                   current_user.account.username + anon.salt + 5.hours.ago.strftime('%D'),
                   anon.namelist,
