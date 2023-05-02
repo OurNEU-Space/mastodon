@@ -2,10 +2,10 @@ name: 'CodeQL'
 
 on:
   push:
-    branches: ['closed-social-glitch-2']
+    branches: ['docker-branch']
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: ['closed-social-glitch-2']
+    branches: ['docker-branch']
   schedule:
     - cron: '22 6 * * 1'
 

@@ -2,9 +2,9 @@ name: Check i18n
 
 on:
   push:
-    branches: [closed-social-glitch-2]
+    branches: [docker-branch]
   pull_request:
-    branches: [closed-social-glitch-2]
+    branches: [docker-branch]
 
 env:
   RAILS_ENV: test
