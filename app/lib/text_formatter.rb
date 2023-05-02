@@ -6,7 +6,7 @@ class TextFormatter
   include RoutingHelper
   include AccountsHelper
 
-  URL_PREFIX_REGEX = /\A(https?:\/\/(www\.)?|xmpp:)/.freeze
+  URL_PREFIX_REGEX = /\A(https?:\/\/(www\.)?|xmpp:)/
 
   DEFAULT_REL = %w(nofollow noopener noreferrer).freeze
 

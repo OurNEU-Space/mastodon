@@ -15,7 +15,11 @@ export default class NavigationBar extends ImmutablePureComponent {
     onLogout: PropTypes.func.isRequired,
   };
 
+
   render () {
+    if (!this.props.account)
+      return null;
+
     return (
       <div className='navigation-bar'>
         <Permalink className='avatar' href={this.props.account.get('url')} to={`/@${this.props.account.get('acct')}`}>
