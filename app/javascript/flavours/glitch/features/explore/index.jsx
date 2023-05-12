@@ -76,6 +76,7 @@ class Explore extends React.PureComponent {
                 <NavLink exact to='/explore/tags'>
                   <FormattedMessage tagName='div' id='explore.trending_tags' defaultMessage='Hashtags' />
                 </NavLink>
+
                 {signedIn && (
                   <NavLink exact to='/explore/suggestions'>
                     <FormattedMessage tagName='div' id='explore.suggested_follows' defaultMessage='People' />
