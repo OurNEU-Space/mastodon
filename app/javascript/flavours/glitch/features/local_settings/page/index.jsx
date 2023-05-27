@@ -29,6 +29,9 @@ const messages = defineMessages({
   rewrite_mentions_username: { id: 'settings.rewrite_mentions_username', defaultMessage:  'Rewrite with username' },
   pop_in_left: { id: 'settings.pop_in_left', defaultMessage: 'Left' },
   pop_in_right: { id: 'settings.pop_in_right', defaultMessage:  'Right' },
+  sidebar_in_right: { id: 'sidebar.right', defaultMessage: 'Right' },
+  sidebar_in_top: { id: 'sidebar.top', defaultMessage: 'Top' },
+  sidebar_in_bottom: { id: 'sidebar.bottom', defaultMessage: 'Bottom' },
 });
 
 class LocalSettingsPage extends React.PureComponent {
@@ -179,6 +182,19 @@ class LocalSettingsPage extends React.PureComponent {
           >
             <FormattedMessage id='settings.wide_view' defaultMessage='Wide view (Desktop mode only)' />
             <span className='hint'><FormattedMessage id='settings.wide_view_hint' defaultMessage='Stretches columns to better fill the available space.' /></span>
+          </LocalSettingsPageItem>
+          <LocalSettingsPageItem
+            settings={settings}
+            item={['sidebar']}
+            id='mastodon-settings--sidebar'
+            options={[
+              { value: 'right', message: intl.formatMessage(messages.sidebar_in_right) },
+              { value: 'top', message: intl.formatMessage(messages.sidebar_in_top) },
+              { value: 'bottom', message: intl.formatMessage(messages.sidebar_in_bottom) },
+            ]}
+            onChange={onChange}
+          >
+            <FormattedMessage id='settings.sidebar' defaultMessage='Sidebar:' />
           </LocalSettingsPageItem>
         </section>
       </div>

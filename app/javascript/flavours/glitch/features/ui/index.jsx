@@ -79,6 +79,7 @@ const mapStateToProps = state => ({
   layout: state.getIn(['meta', 'layout']),
   layout_local_setting: state.getIn(['local_settings', 'layout']),
   isWide: state.getIn(['local_settings', 'stretch']),
+  sidebarPosition: state.getIn(['local_settings', 'sidebar']),
   navbarUnder: state.getIn(['local_settings', 'navbar_under']),
   dropdownMenuIsOpen: state.getIn(['dropdown_menu', 'openId']) !== null,
   unreadNotifications: state.getIn(['notifications', 'unread']),
@@ -255,6 +256,7 @@ class UI extends React.Component {
     children: PropTypes.node,
     layout_local_setting: PropTypes.string,
     isWide: PropTypes.bool,
+    sidebarPosition: PropTypes.string,
     systemFontUi: PropTypes.bool,
     navbarUnder: PropTypes.bool,
     isComposing: PropTypes.bool,
@@ -606,7 +608,7 @@ class UI extends React.Component {
 
   render () {
     const { draggingOver } = this.state;
-    const { children, isWide, navbarUnder, location, dropdownMenuIsOpen, layout, moved } = this.props;
+    const { children, isWide, sidebarPosition, navbarUnder, location, dropdownMenuIsOpen, layout, moved } = this.props;
 
     const columnsClass = layout => {
       switch (layout) {
@@ -619,7 +621,7 @@ class UI extends React.Component {
       }
     };
 
-    const className = classNames('ui', columnsClass(layout), {
+    const className = classNames('ui',  `sidebar-${sidebarPosition}`, columnsClass(layout), {
       'wide': isWide,
       'system-font': this.props.systemFontUi,
       'navbar-under': navbarUnder,
