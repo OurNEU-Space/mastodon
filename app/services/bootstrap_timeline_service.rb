@@ -5,7 +5,7 @@ class BootstrapTimelineService < BaseService
     @source_account = source_account
 
     autofollow_inviter!
-    notify_staff! unless Rails.configuration.x.single_user_mode
+    notify_staff! unless Rails.configuration.x.disable_signup_notification
   end
 
   private
