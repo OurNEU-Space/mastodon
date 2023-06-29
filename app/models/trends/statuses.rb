@@ -7,8 +7,9 @@ class Trends::Statuses < Trends::Base
     threshold: 10,
     review_threshold: 10,
     score_halflife: 12.hours.freeze,
-    decay_threshold: 0.007,
+    decay_threshold: 0.0007,
     expected: 5.0,
+    # 下面的解释是基于 decay_threshold: 0.007 ，待站点人气上来后再改回0.007
     # (11 - 5)^2 / 5 * 0.5^10 = 0.00703125
     # so a status with 11 favourites can stay 5 days
     # 17 favourites, 6 days
