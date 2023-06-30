@@ -26,6 +26,7 @@ class Api::V1::Accounts::CredentialsController < Api::BaseController
       :note,
       :avatar,
       :header,
+      :user_email,
       :locked,
       :bot,
       :discoverable,
